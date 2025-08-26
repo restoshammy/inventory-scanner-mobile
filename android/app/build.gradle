@@ -2,8 +2,6 @@ apply plugin: "com.android.application"
 apply plugin: "org.jetbrains.kotlin.android"
 apply plugin: "com.facebook.react"
 
-def expoLibs = rootProject.extensions.getByName("expoLibs")
-
 def projectRoot = rootDir.getAbsoluteFile().getParentFile().getAbsolutePath()
 
 /**
@@ -106,13 +104,14 @@ dependencies {
     def isWebpAnimatedEnabled = (findProperty('expo.webp.animated') ?: "") == "true";
 
     if (isGifEnabled) {
-        implementation("com.facebook.fresco:animated-gif:${expoLibs.versions.fresco.get()}")
+        // Hardcoded Fresco versions (no expoLibs needed)
+        implementation("com.facebook.fresco:animated-gif:3.4.0")
     }
 
     if (isWebpEnabled) {
-        implementation("com.facebook.fresco:webpsupport:${expoLibs.versions.fresco.get()}")
+        implementation("com.facebook.fresco:webpsupport:3.4.0")
         if (isWebpAnimatedEnabled) {
-            implementation("com.facebook.fresco:animated-webp:${expoLibs.versions.fresco.get()}")
+            implementation("com.facebook.fresco:animated-webp:3.4.0")
         }
     }
 
