@@ -36,14 +36,13 @@ def jscFlavor = 'io.github.react-native-community:jsc-android:2026004.+'
 android {
     namespace 'com.sjnh.inventoryscanner'
 
-    compileSdkVersion 34
-    buildToolsVersion "34.0.0"
+    compileSdkVersion 35
     ndkVersion "27.1.12297006"
 
     defaultConfig {
         applicationId 'com.sjnh.inventoryscanner'
         minSdkVersion 24
-        targetSdkVersion 34
+        targetSdkVersion 35
         versionCode 2
         versionName "1.1.0"
     }
