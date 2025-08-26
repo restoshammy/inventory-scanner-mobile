@@ -1,0 +1,31 @@
+{
+  "name": "inventory-scanner-mobile",
+  "version": "1.1.0",
+  "private": true,
+  "scripts": {
+    "start": "expo start --dev-client",
+    "android": "expo run:android",
+    "ios": "expo run:ios",
+    "web": "expo start --web"
+  },
+  "dependencies": {
+    "expo": "~53.0.22",
+    "expo-barcode-scanner": "^12.9.3",
+    "expo-camera": "~16.1.11",
+    "expo-dev-client": "~5.2.4",
+    "expo-modules-core": "~2.5.0",
+    "expo-status-bar": "~2.2.3",
+    "react": "19.0.0",
+    "react-native": "0.79.6",
+    "expo-build-properties": "~0.14.8"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.0",
+    "@react-native-community/cli": "^20.0.1",
+    "@react-native-community/cli-platform-android": "^20.0.1",
+    "@react-native/gradle-plugin": "^0.79.6",
+    "@types/react": "^19.1.10",
+    "@types/react-native": "~0.73.0",
+    "typescript": "~5.3.3"
+  }
+}
