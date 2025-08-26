@@ -17,7 +17,7 @@ class MainApplication : Application(), ReactApplication {
     object : DefaultReactNativeHost(this) {
       override fun getPackages(): List<ReactPackage> {
         val packages = PackageList(this).packages
-        // Manually add non-autolinked packages here if needed
+        // Add extra packages manually here if needed
         return packages
       }
 
@@ -29,13 +29,10 @@ class MainApplication : Application(), ReactApplication {
       override val isHermesEnabled: Boolean = BuildConfig.IS_HERMES_ENABLED
     }
 
-  override fun getReactNativeHost(): ReactNativeHost = reactNativeHost
-
   override fun onCreate() {
     super.onCreate()
     SoLoader.init(this, OpenSourceMergedSoMapping)
     if (BuildConfig.IS_NEW_ARCHITECTURE_ENABLED) {
-      // Load native entry point for New Architecture
       load()
     }
   }
