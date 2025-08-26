@@ -6,7 +6,7 @@ pluginManagement {
     }.standardOutput.asText.get().trim()
   ).getParentFile().absolutePath
   includeBuild(reactNativeGradlePlugin)
-
+  
   def expoPluginsPath = new File(
     providers.exec {
       workingDir(rootDir)
@@ -23,14 +23,15 @@ plugins {
 }
 
 extensions.configure(com.facebook.react.ReactSettingsExtension) { ex ->
-  if (System.getenv("EXPO_USE_COMMUNITY_AUTOLINKING") == "1") {
+  if (System.getenv('EXPO_USE_COMMUNITY_AUTOLINKING') == '1') {
     ex.autolinkLibrariesFromCommand()
   } else {
     ex.autolinkLibrariesFromCommand(expoAutolinking.rnConfigCommand)
   }
 }
+expoAutolinking.useExpoModules()
 
-// ✅ Required for expo modules like expo-barcode-scanner
+// ✅ Required for Expo modules like expo-barcode-scanner
 expoAutolinking.useExpoModules()
 
 rootProject.name = "inventory-scanner-mobile"
