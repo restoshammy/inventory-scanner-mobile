@@ -8,13 +8,6 @@ bower_components
 dist
 build
 
-# Android build artifacts
-android/.gradle
-android/.idea
-android/app/build
-android/build
-*.iml
-
 # iOS build artifacts
 ios/build
 ios/Pods
